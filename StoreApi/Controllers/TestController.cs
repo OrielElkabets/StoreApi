@@ -4,8 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StoreApi.Controllers
 {
-    // https://localhost:7208/api/test
-    // https://localhost:7208/api/test/get-name
     [Route("api/[controller]")]
     [ApiController]
     public class TestController : ControllerBase
@@ -35,6 +33,13 @@ namespace StoreApi.Controllers
         public IActionResult Add(int num1, int num2)
         {
             return Ok(num1 + num2);
+        }
+
+
+        [HttpGet("mul")]
+        public IActionResult Mul(int num1, int num2 = 5)
+        {
+            return Ok(num1 * num2);
         }
     }
 }
